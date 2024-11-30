@@ -4,44 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e037f88c-e8b6-4e70-8337-e058fb846cb0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Ejercicios.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Ejercicios.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3433bfcd-6c75-463d-862b-0f082813d726" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
+  &quot;associatedIndex&quot;: 8
 }</component>
-  <component name="ProjectId" id="2pSdZIPkWRX3I1BpvO4QaSxi8W0" />
+  <component name="ProjectId" id="2pCrC6vyoNSsWHmhawm4Trzlv4O" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Application.Main.executor": "Run",
+    "Application.RelojDemo.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/cesar/Desktop/git/BootcampRoshka/Ejercicios/Cartas2Jugadores",
+    "last_opened_file_path": "C:/Users/cesar/IdeaProjects/java 002/untitled",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
+    "onboarding.tips.debug.path": "C:/Users/cesar/IdeaProjects/untitled/src/Main.java",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -56,13 +51,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e037f88c-e8b6-4e70-8337-e058fb846cb0" name="Changes" comment="" />
-      <created>1732763465090</created>
+      <changelist id="3433bfcd-6c75-463d-862b-0f082813d726" name="Changes" comment="" />
+      <created>1732280770111</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1732763465090</updated>
-      <workItem from="1732763466462" duration="30000" />
-      <workItem from="1732891206560" duration="2295000" />
+      <updated>1732280770111</updated>
+      <workItem from="1732280771302" duration="27343000" />
+      <workItem from="1732308947989" duration="241000" />
+      <workItem from="1732498462274" duration="318000" />
+      <workItem from="1732498813685" duration="829000" />
     </task>
     <servers />
   </component>
