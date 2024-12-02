@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Connection c = null;
         try {
-            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Market", "postgres", "14@asP.numeros");
+            c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/market", "postgres", "cesarcrack24");
 
 //         topClientesFacturas(c);
 //         topClientesGasto(c);
@@ -117,16 +117,19 @@ public class Main {
 
     public static void consultaId97(Connection c) throws SQLException {
         try (Statement stmt = c.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT f.id, SUM(fd.cantidad * p.precio) AS MontoTotal, SUM((fd.cantidad * p.precio) * 0.1) AS IVA10\n" +
-                     "FROM factura f\n" +
+             ResultSet rs = stmt.executeQuery("SELECT c.nombre||' '||c.apellido AS Cliente, f.fecha_emision, p.nombre AS Producto, fd.cantidad, ft.nombre AS TipoDeFactura\n" +
+                     "FROM cliente c \n" +
+                     "INNER JOIN factura f ON c.id = f.cliente_id\n" +
                      "INNER JOIN factura_detalle fd ON f.id = fd.factura_id\n" +
                      "INNER JOIN producto p ON fd.producto_id = p.id\n" +
-                     "GROUP BY f.id\n" +
-                     "ORDER BY MontoTotal DESC;\n")) {
+                     "INNER JOIN factura_tipo ft ON f.factura_tipo_id = ft.id \n" +
+                     "WHERE f.id = 97;")) {
             while (rs.next()) {
-                System.out.println(" id: " + rs.getInt("id") +
-                        ", Monto Total : " + rs.getInt("MontoTotal") +
-                        ", Producto: " + rs.getInt("IVA10"));
+                System.out.println(" Cliente: " + rs.getString("Cliente") +
+                        ", Fecha De Emision : " + rs.getString("fecha_emision") +
+                        ", Producto: " + rs.getString("Producto") +
+                        ", Cantidad : " + rs.getInt("cantidad") +
+                        ", Tipo de Factura : " + rs.getString("TipoDeFactura"));
             }
         }
     }
