@@ -63,8 +63,6 @@ body {
 }
 
 .button {
-  border: none;
-  box-shadow: none;
   height: 50px;
   width: 50%;
   margin-top: 10px;
@@ -78,23 +76,4 @@ body {
 
 .button:hover {
   background-color: #5f4e4e;
-}
-
-.tirar {
-  animation: tirar 1s forwards;
-}
-
-@keyframes tirar {
-  0% {
-    transform: rotateX(0) rotateY(0) translateY(0);
-    opacity: 1;
-  }
-  50% {
-    transform: rotateX(720deg) rotateY(720deg) translateY(-30px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: rotateX(0) rotateY(0) translateY(0);
-    opacity: 1;
-  }
 }
