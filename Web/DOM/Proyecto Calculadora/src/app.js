@@ -51,6 +51,10 @@ const Calculadora = (() => {
       let resultado = eval(entradaActual);
       pantalla.textContent = resultado;
       entradaActual = resultado.toString();
+      if (resultado === Infinity) {
+        pantalla.textContent = "Error";
+        entradaActual = "";
+      }
     } catch (error) {
       pantalla.textContent = "Error";
       entradaActual = "";

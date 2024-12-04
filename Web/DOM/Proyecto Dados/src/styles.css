@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f3f3f3;
+}
+
+#dado-container {
+  background-color: #88ebe3;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dado {
+  height: 200px;
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.punto {
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+#dado1 .punto {
+  grid-column: 1 / span 2;
+}
+
+#dado5 .punto:nth-child(3) {
+  grid-column: 1 / span 2;
+}
+
+#dado3 {
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#dado3 .punto:nth-child(1) {
+  grid-column: 2;
+}
+
+#dado3 .punto:nth-child(3) {
+  grid-row: 3;
+  grid-column: 1;
+}
+
+#dado3 .punto:nth-child(2) {
+  grid-column: 1 / span 2;
+}
+
+.button {
+  border: none;
+  box-shadow: none;
+  height: 50px;
+  width: 50%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  background-color: #483e3e;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #5f4e4e;
+}
+
+.tirar {
+  animation: tirar 1s forwards;
+}
+
+@keyframes tirar {
+  0% {
+    transform: rotateX(0) rotateY(0) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: rotateX(720deg) rotateY(720deg) translateY(-30px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: rotateX(0) rotateY(0) translateY(0);
+    opacity: 1;
+  }
+}
