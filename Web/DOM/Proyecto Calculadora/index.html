@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora Infija</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div id="calculadora">
+      <div id="pantalla"></div>
+      <table id="botones">
+        <tr>
+          <td><button data-value="7">7</button></td>
+          <td><button data-value="8">8</button></td>
+          <td><button data-value="9">9</button></td>
+          <td><button data-value="/">/</button></td>
+        </tr>
+        <tr>
+          <td><button data-value="4">4</button></td>
+          <td><button data-value="5">5</button></td>
+          <td><button data-value="6">6</button></td>
+          <td><button data-value="*">*</button></td>
+        </tr>
+        <tr>
+          <td><button data-value="1">1</button></td>
+          <td><button data-value="2">2</button></td>
+          <td><button data-value="3">3</button></td>
+          <td><button data-value="-">-</button></td>
+        </tr>
+        <tr>
+          <td><button data-value="0">0</button></td>
+          <td><button data-value=".">.</button></td>
+          <td><button data-value="=">=</button></td>
+          <td><button data-value="+">+</button></td>
+        </tr>
+        <tr>
+          <td colspan="4"><button id="clear" data-value="c">CLEAR</button></td>
+        </tr>
+      </table>
+    </div>
+    <script src="src/app.js" type="module"></script>
+  </body>
+</html>
