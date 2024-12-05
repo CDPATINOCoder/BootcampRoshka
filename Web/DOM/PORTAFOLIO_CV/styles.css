@@ -1,8 +1,8 @@
 /***********Custom Properties***********/
 
 :root {
-  --first-color: #d90062;
-  --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --first-color: #0091ff;
+  --first-alpha-color: rgba(0, 199, 217, 0.75);
   --second-color: #14192d;
   --second-alpha-color: rgba(20, 25, 45, 0.75);
   --third-color: #501464;
@@ -94,6 +94,30 @@ p {
 
 /***********Components**********/
 
+/***********Hero image**********/
+
+.hero-image {
+  background-image: var(--hero-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: var(--hero-attatchment);
+}
+
+.hero-image-opacity {
+  min-width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--hero-opacity-color);
+  text-align: center;
+}
+
+.hero-image-tittle {
+  font-size: 5vw;
+  color: var(--tittle-image-color);
+}
 /***********MENU**********/
 
 /* quitamos el borde horrible que le pone html a los botones */
@@ -142,10 +166,51 @@ p {
   color: var(--white-color);
 }
 
+/*DESKTOP*/
+
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    opacity: 1;
+    pointer-events: auto;
+    flex-direction: row;
+  }
+
+  .menu a {
+    font-weight: 800;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+  }
+
+  .menu a:last-child {
+    padding-right: 0;
+  }
+}
+
 /***********Utilities**********/
 
 .box-shadow-1 {
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+  border-radius: 0.5rem;
+  display: inline-block;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
 }
 
 /* automaticamente damos un ancho especifico a todos los contenedores */
@@ -181,10 +246,18 @@ p {
   align-items: center;
 }
 
+/* al logo le damos un color, un tamaño de fuente de 2rem ya que el contenedor es de 4rem, y deshabilitamos la decoracion del enlace, el cual es la linea que suele aplicarse a cualquier enlace */
 .logo a {
   color: var(--first-color);
   font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
 }
-/* al logo le damos un color, un tamaño de fuente de 2rem ya que el contenedor es de 4rem, y deshabilitamos la decoracion del enlace, el cual es la linea que suele aplicarse a cualquier enlace */
+
+@media screen and (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+    height: var(--header-heigth);
+  }
+}

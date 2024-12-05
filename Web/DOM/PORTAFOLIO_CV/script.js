@@ -7,5 +7,11 @@
     menu.classList.toggle("is-active");
   });
 
-  document.addEventListener("click", (event) => {});
+  document.addEventListener("click", (event) => {
+    if (!event.target.matches(".menu a")) return false;
+
+    btnMenu.firstElementChild.classList.remove("none");
+    btnMenu.lastElementChild.classList.add("none");
+    menu.classList.remove("is-active");
+  });
 })();

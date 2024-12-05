@@ -42,16 +42,109 @@
         <nav class="menu">
           <a href="#inicio">Inicio</a>
           <a href="#acerca">Acerca</a>
-          <a href="portafolio">Portafolio</a>
-          <a href="contacto">Contacto</a>
+          <a href="#portafolio">Portafolio</a>
+          <a href="#contacto">Contacto</a>
         </nav>
       </div>
     </header>
     <section id="inicio" class="home">
-      <h2>Home</h2>
+      <article
+        class="hero-image"
+        style="
+          --hero-image: url('assets/hero-image-home.jpg');
+          --hero-attatchment: fixed;
+        "
+      >
+        <aside
+          class="hero-image-opacity"
+          style="--hero-opacity-color: var(--black-alpha-color)"
+        >
+          <div class="hero-image-content">
+            <h2
+              class="hero-image-tittle"
+              style="--tittle-image-color: var(--white-color)"
+            >
+              Bienvenido a mi Portafolio <br />
+              Web Personal
+            </h2>
+            <a href="#contacto" class="btn">CONTACTAME</a>
+          </div>
+        </aside>
+      </article>
     </section>
     <section id="acerca" class="about">
-      <h2>Acerca</h2>
+      <article class="text-lg-right">
+        <aside class="text-center text-lg-right">
+          <h1>Cesar Patiño</h1>
+          <h5>
+            Desarrollador Web Trainee & Aprendiz de Tecnologías Modernas
+            <i>web</i>
+          </h5>
+        </aside>
+        <p>
+          Soy un desarrollador web en formación, apasionado por aprender y
+          construir soluciones digitales que marquen la diferencia. Actualmente,
+          estoy explorando y perfeccionando mis habilidades en el desarrollo web
+          con tecnologías como HTML, CSS, JavaScript, Java y frameworks
+          modernos.
+        </p>
+        <p>
+          Mi enfoque principal está en comprender a fondo los fundamentos del
+          desarrollo backend, mientras amplío mi conocimiento hacia tecnologías
+          frontend para convertirme en un profesional completo.
+        </p>
+        <p>
+          Disfruto enfrentar retos que me permitan crecer como desarrollador y
+          aplicar mis habilidades para crear sitios web accesibles, optimizados
+          y centrados en el usuario.
+        </p>
+        <p>
+          Aspiro a colaborar con equipos dinámicos y aprender de profesionales
+          experimentados, contribuyendo con mi entusiasmo, compromiso y una
+          mentalidad de mejora continua.
+        </p>
+      </article>
+      <article>
+        <img class="gray-scale" src="foto" alt="foto Cesar Patino" />
+      </article>
+      <article>
+        <h2 class="text-center text-lg-left">Mis Habilidades</h2>
+        <div class="progress">
+          <p>
+            <b> <i> JavaScript </i></b>
+            <b>40%</b>
+          </p>
+          <progress value="40" min="0" max="100"></progress>
+        </div>
+        <div class="progress">
+          <p>
+            <b> <i>Java</i></b>
+            <b>30%</b>
+          </p>
+          <progress value="30" min="0" max="100"></progress>
+        </div>
+        <div class="progress">
+          <p>
+            <b> <i>SQL</i></b>
+            <b>40%</b>
+          </p>
+          <progress value="40" min="0" max="100"></progress>
+        </div>
+        <div class="progress">
+          <p>
+            <b> <i>Html</i></b>
+            <b>70%</b>
+          </p>
+          <progress value="70" min="0" max="100"></progress>
+        </div>
+        <div class="progress">
+          <p>
+            <b> <i>CSS</i></b>
+            <b>40%</b>
+          </p>
+          <progress value="40" min="0" max="100"></progress>
+        </div>
+      </article>
     </section>
     <section id="portafolio" class="portfolio">
       <h2>Portafolio</h2>
