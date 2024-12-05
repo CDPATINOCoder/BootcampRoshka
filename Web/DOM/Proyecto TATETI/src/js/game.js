@@ -62,6 +62,10 @@ const comprobarGanador = () => {
   for (const combinacion of combinaciones) {
     const [a, b, c] = combinacion;
     if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+      // Inhabilitar el tablero
+      const tablero = document.getElementById("tablero"); // Selecciona el contenedor del tablero
+      tablero.classList.add("disabled"); // Agrega la clase "disabled"
+
       alert(
         `¡${
           currentPlayer === "jugador1" ? "Jugador 2" : "Jugador 1"
@@ -73,6 +77,9 @@ const comprobarGanador = () => {
 
   // Verificar empate
   if (board.every((casilla) => casilla !== null)) {
+    // Inhabilitar el tablero
+    const tablero = document.getElementById("tablero"); // Selecciona el contenedor del tablero
+    tablero.classList.add("disabled"); // Agrega la clase "disabled"
     alert("¡Es un empate!");
   }
 };

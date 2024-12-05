@@ -1,0 +1,190 @@
+/***********Custom Properties***********/
+
+:root {
+  --first-color: #d90062;
+  --first-alpha-color: rgba(217, 0, 98, 0.75);
+  --second-color: #14192d;
+  --second-alpha-color: rgba(20, 25, 45, 0.75);
+  --third-color: #501464;
+  --third-alpha-color: rgba(80, 20, 100, 0.75);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --tittle-color: #333;
+  --text-color: #222;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+
+  --font: "Raleway", sans-serif;
+
+  --max-width: 1200px;
+  --header-heigth: 4rem;
+}
+
+/***********Reset***********/
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+}
+
+a:hover {
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/***********Components**********/
+
+/***********MENU**********/
+
+/* quitamos el borde horrible que le pone html a los botones */
+.menu-btn {
+  background-color: var(--second-color);
+  outline: 0 solid var(--first-color);
+  border: 0;
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  fill: var(--first-color);
+}
+
+/* el menu lo hacemos fixed y lo colocamos por encima del header para que luego de hacer click al boton este se abra y sea continuo, especificamos nuevamente el ancho, el alto es automatico, lo hacemos flexible para que coloquemos las opciones en columna, (el bottom tiene 4rems = 64px), opacidad para que se oculte, solo se activara con js, y el pointer-events none para que el puntero no pueda interactuar con las opciones */
+.menu {
+  position: fixed;
+  left: 0;
+  bottom: var(--header-heigth);
+  width: 100%;
+  background-color: var(--second-color);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* a los enlaces del menu (opciones) centramos el texto dentro, separamos con un padding, agrandamos un poco, la fuente y quitamos los subrayados */
+.menu a {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.25rem;
+  color: var(--first-color);
+  text-decoration: none;
+}
+
+/* cuando posicionemos el puntero sobre las opciones el color de fondo cambia al principal nuevamente y el color del texto tambien */
+.menu a:hover {
+  background-color: var(--first-color);
+  color: var(--white-color);
+}
+
+/***********Utilities**********/
+
+.box-shadow-1 {
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+/* automaticamente damos un ancho especifico a todos los contenedores */
+.container {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* utilidad para deshabilitar el nav proximamente */
+.none {
+  display: none;
+}
+
+/***********Site Sytles**********/
+
+/* En mobile first hacemos que el header se quede estatico debajo por debajo, especificamos un width ya que al colocar position fixed pierde sus longitudes, tambien le especificamos un ancho de 64px */
+.header {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  height: var(--header-heigth);
+  background-color: var(--second-color);
+}
+
+/* al contenedor del header le damos un height igual al del header, lo hacemos flexible, aplicamos el justify content y align-items para agegar espaciado entre los elementos hijos, en este caso el logo y el boton */
+.header > .container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--first-color);
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
+/* al logo le damos un color, un tamaño de fuente de 2rem ya que el contenedor es de 4rem, y deshabilitamos la decoracion del enlace, el cual es la linea que suele aplicarse a cualquier enlace */
