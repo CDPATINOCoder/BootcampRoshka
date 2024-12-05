@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/styles.css" />
+  </head>
+  <body>
+    <h1>Juego TA-TE-TI</h1>
+    <div id="app">
+      <div class="formulario">
+        <label for="jugador1">Nombre Del Jugador 1:</label>
+        <input
+          type="text"
+          id="jugador1"
+          placeholder="Nombre"
+          name="jugador1"
+          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+          required=""
+          title="El campo no puede estar vacio"
+        />
+        <label for="jugador2">Nombre Del Jugador 2:</label>
+        <input
+          type="text"
+          id="jugador2"
+          placeholder="Nombre"
+          name="jugador2"
+          pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+          required=""
+          title="El campo no puede estar vacio"
+        />
+        <p class="opcion">Quien es la X?</p>
+        <label>
+          <input type="radio" name="simbolo" value="jugador1" required="" />
+          Jugador 1
+        </label>
+        <label>
+          <input type="radio" name="simbolo" value="jugador2" required="" />
+          Jugador 2
+        </label>
+        <button id="iniciar-juego" class="button">Iniciar Juego</button>
+      </div>
+      <div id="tablero" class="tablero-container">
+        <div class="casilla" data-casilla="0"></div>
+        <div class="casilla" data-casilla="1"></div>
+        <div class="casilla" data-casilla="2"></div>
+        <div class="casilla" data-casilla="3"></div>
+        <div class="casilla" data-casilla="4"></div>
+        <div class="casilla" data-casilla="5"></div>
+        <div class="casilla" data-casilla="6"></div>
+        <div class="casilla" data-casilla="7"></div>
+        <div class="casilla" data-casilla="8"></div>
+      </div>
+    </div>
+    <script src="src/js/app.js" type="module"></script>
+  </body>
+</html>
