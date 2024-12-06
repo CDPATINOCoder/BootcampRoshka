@@ -201,6 +201,11 @@ p {
   color: var(--hero-text-color);
 }
 
+.perfil-image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 /* ********** Menu ********** */
 .menu-btn {
   outline: thin solid var(--first-color);
