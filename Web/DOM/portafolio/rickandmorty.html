@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick and Morty Api</title>
+    <link rel="stylesheet" href="rickandmorty.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Rick and Morty - Personajes</h1>
+    <section id="personajes"></section>
+    <footer>
+      <p>Hecho por: Cesar Patiño</p>
+    <script>
+      $(document).ready(() => {
+        $.ajax({
+          url: "https://rickandmortyapi.com/api/character",
+          method: "GET",
+          success: (data) => {
+            console.log(data.results);
+            renderCharacter(data.results);
+          },
+          error: (error) => {
+            console.error("La peticion ha fallado", error);
+          },
+        });
+
+        const renderCharacter = (characters) => {
+          const $characterSection = $("#personajes");
+          for (ch of characters) {
+            $characterSection.append(`
+            <div class="character">
+              <img src="${ch.image}" alt="${ch.name}">
+              <div class="character-info">
+                <h2 class="character-tittle">${ch.name}</h2>
+                <p>Estado: ${ch.status === "Alive" ? "Vivo" : "Muerto"}</p>
+                <p>Genero: ${ch.gender === "Male" ? "Hombre" : "Mujer"}</p>
+                <p>Especie: ${ch.species === "Human" ? "Humano" : "Alien"}</p>
+                <p>Origen: ${ch.origin.name === "unknown" ? "Sin datos" : ch.origin.name}</p>
+              </div>
+            </div>
+            `);
+          }
+          console.log($characterSection.html);
+        };
+      });
+    </script>
+  </body>
+</html>

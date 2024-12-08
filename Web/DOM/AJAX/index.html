@@ -4,17 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AJAX</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
   <body>
     <h1>API REST</h1>
-    <div id="caracteres"></div>
+    <!-- <p>holamundo</p> -->
+    <!-- <p style="display: none">este parrafo aparece y desaparece con el boton</p> -->
+    <div id="characters">
+      <!-- Aquí se renderizarán los personajes -->
+    </div>
     <button id="button">get api</button>
-    <script>
+    <!-- <button id="button2">esconder</button> -->
+
+    <!-- <script>
       console.log("api");
 
-      const div = 
-
-      (() => {
+      const div = (() => {
         const button = document.getElementById("button");
         button.addEventListener("click", () => {
           fetch("https://rickandmortyapi.com/api/character")
@@ -23,11 +28,84 @@
         });
 
         const characterRender = (character) => {
-          character.forEach((character) => {
-            div.innerHTML += `= <h2>${character.name}</h2>`;
-          });
+          console.log(character);
+          const personajes = document.getElementById("caracteres");
+          console.log(personajes);
+          for (ch of character) {
+            personajes.innerHTML =
+              personajes.innerHTML +
+              `
+            <h2>${ch.name}</h2>
+            <img src="${ch.image}" alt="${ch.name}">`;
+          }
+          console.log(personajes.innerHTML);
         };
       })();
+    </script> -->
+
+    <!-- <script>
+      $(document).ready(() => {
+        console.log("api");
+        $("#button").click(() => {
+          // $("h1").hide();
+          // $("h1").text("El .text sirve para cambiar el texto");
+          // $("p").toggle();
+          $("p").fadeIn();
+        });
+        $("#button2").click(() => {
+          $("p").fadeOut();
+        });
+        $("p")
+          .mouseover(() => {
+            $("p").css("font-weight", "bold");
+          })
+          .mouseout(() => {
+            $("p").css("font-weight", "normal");
+          });
+      }); -->
+
+      <script>
+        $(document).ready(() => {
+          $("#button").click(() =>{
+            $.ajax({
+              url: "https://rickandmortyapi.com/api/character",
+              method: "GET",
+              success: (characters) => {
+                console.log(characters.results)
+                renderCharacters(characters.results)
+              },
+              error: (err) => {
+                console.error("Error al hacer la peticion", err)
+              }
+            })
+          })
+
+          const renderCharacters = (characters) => {
+            const $personajes = $("#characters");
+            console.log($personajes);
+            $personajes.empty();
+            console.log($personajes)
+            // for (ch of characters) {
+            //   $personajes.append(`<h2>${ch.name}</h2>
+            //   <img src="${ch.image}" alt="${ch.name}">
+            //   `)
+            // }
+            // console.log($personajes.html())
+            for (ch of characters) {
+              const $characterContent = $(`
+                <div>
+                  <h2>${ch.name}</h2>
+                  <img src="${ch.image}" alt="${ch.name}">
+                </div>
+              `)
+              $personajes.append($characterContent)
+            }
+            console.log($personajes.html())
+          }
+
+        })
+      </script>
+
     </script>
   </body>
 </html>
