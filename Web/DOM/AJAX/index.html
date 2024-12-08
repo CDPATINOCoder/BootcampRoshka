@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX</title>
+  </head>
+  <body>
+    <h1>API REST</h1>
+    <div id="caracteres"></div>
+    <button id="button">get api</button>
+    <script>
+      console.log("api");
+
+      const div = 
+
+      (() => {
+        const button = document.getElementById("button");
+        button.addEventListener("click", () => {
+          fetch("https://rickandmortyapi.com/api/character")
+            .then((response) => response.json())
+            .then((data) => characterRender(data.results));
+        });
+
+        const characterRender = (character) => {
+          character.forEach((character) => {
+            div.innerHTML += `= <h2>${character.name}</h2>`;
+          });
+        };
+      })();
+    </script>
+  </body>
+</html>
