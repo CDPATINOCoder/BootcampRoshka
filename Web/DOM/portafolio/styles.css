@@ -205,6 +205,16 @@ p {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.perfil-image {
+  width: 100%; /* Para que sea responsiva dentro del contenedor */
+  max-width: 350px; /* Ancho máximo para pantallas grandes */
+  aspect-ratio: 1 / 1; /* Mantener proporción cuadrada */
+  border-radius: 50%; /* Redondear los bordes si prefieres una imagen circular */
+  object-fit: cover; /* Asegurar que la imagen se ajuste sin deformarse */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Añadir sombra para destacar */
 }
 /* ********** Menu ********** */
 .menu-btn {
@@ -531,9 +541,12 @@ progress::-moz-progress-bar {
 
 @media screen and (min-width: 1024px) {
   .about {
+    background-color: var(--gray-light-color);
     display: grid;
-    justify-content: space-between;
-    align-content: center;
+    grid-template-columns: 60% 40%;
+    align-items: center;
+    padding: 2rem;
+    gap: 2rem;
   }
 
   .contact-cards {
