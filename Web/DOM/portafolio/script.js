@@ -60,7 +60,7 @@ document.getElementById("downloadBtn").addEventListener("click", () => {
   const element = document.getElementById("acerca");
   const options = {
     margin: 0,
-    filename: "Marcos Ortiz - CV",
+    filename: "Cesar_Patino_CV.pdf",
     image: { type: "jpeg", quality: 0.98 },
     html2canvas: { scale: 2, scrollY: 0 },
     jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
