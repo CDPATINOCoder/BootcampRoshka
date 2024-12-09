@@ -9,21 +9,25 @@
   </head>
   <body>
     <h1>Rick and Morty - Personajes</h1>
+    <button>Traer Personajes</button>
     <section id="personajes"></section>
     <footer>
       <p>Hecho por: Cesar Patiño</p>
+    </footer>
     <script>
       $(document).ready(() => {
-        $.ajax({
-          url: "https://rickandmortyapi.com/api/character",
-          method: "GET",
-          success: (data) => {
-            console.log(data.results);
-            renderCharacter(data.results);
-          },
-          error: (error) => {
-            console.error("La peticion ha fallado", error);
-          },
+        $("button").click(() => {
+          $.ajax({
+            url: "https://rickandmortyapi.com/api/character",
+            method: "GET",
+            success: (data) => {
+              console.log(data.results);
+              renderCharacter(data.results);
+            },
+            error: (error) => {
+              console.error("La peticion ha fallado", error);
+            },
+          });
         });
 
         const renderCharacter = (characters) => {
@@ -37,7 +41,9 @@
                 <p>Estado: ${ch.status === "Alive" ? "Vivo" : "Muerto"}</p>
                 <p>Genero: ${ch.gender === "Male" ? "Hombre" : "Mujer"}</p>
                 <p>Especie: ${ch.species === "Human" ? "Humano" : "Alien"}</p>
-                <p>Origen: ${ch.origin.name === "unknown" ? "Sin datos" : ch.origin.name}</p>
+                <p>Origen: ${
+                  ch.origin.name === "unknown" ? "Sin datos" : ch.origin.name
+                }</p>
               </div>
             </div>
             `);
