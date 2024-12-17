@@ -46,4 +46,15 @@ public class PostulanteController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+
+    @DeleteMapping("/postulantes/{nroCedula}")
+    public ResponseEntity<String> eliminarPostulante(@PathVariable int nroCedula) {
+        try {
+            postulanteService.deletePostulante(nroCedula);
+            return ResponseEntity.ok("Postulante eliminado exitosamente.");
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
 }

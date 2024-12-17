@@ -13,4 +13,6 @@ public interface PostulanteService {
     Postulante createPostulante(Postulante postulante);
 
     Postulante actualizarPostulante(int nroCedula, Postulante postulanteActualizado);
+
+    void deletePostulante(int nroCedula);
 }

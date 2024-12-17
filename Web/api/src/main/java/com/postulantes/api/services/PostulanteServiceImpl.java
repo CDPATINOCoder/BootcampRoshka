@@ -48,6 +48,15 @@ public class PostulanteServiceImpl implements PostulanteService {
         return postulanteRepository.save(postulante);
     }
 
+    @Override
+    public void deletePostulante(int nroCedula) {
+        Postulante postulante = postulanteRepository.findByNroCedula(nroCedula);
+        if (postulante == null) {
+            throw new NoSuchElementException("No se encontro postulante con nroCedula: " + nroCedula);
+        }
+        postulanteRepository.delete(postulante);
+    }
+
 
 
 }
