@@ -10,4 +10,7 @@ public interface PostulanteService {
 
     Postulante getPostulante(int nroCedula);
 
+    Postulante createPostulante(Postulante postulante);
+
+    Postulante actualizarPostulante(int nroCedula, Postulante postulanteActualizado);
 }
