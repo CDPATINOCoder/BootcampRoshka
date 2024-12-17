@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manipulacion de formularios</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      .resaltado {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="miTexto" placeholder="Escribe algo aqui" />
+    <button id="mostrarTexto">Mostrar Texto</button>
+    <button id="ocultarTexto">OcultarTexto</button>
+    <p id="resultado"></p>
+    <script>
+      $(document).ready(() => {
+        $("#mostrarTexto").click(() => {
+          const texto = $("#miTexto").val();
+          $("#resultado").text(texto);
+          $("#resultado").show();
+        });
+
+        $("#ocultarTexto").click(() => {
+          const texto = $("#resultado");
+          texto.hide();
+        });
+      });
+    </script>
+  </body>
+</html>
